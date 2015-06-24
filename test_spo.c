@@ -11,6 +11,7 @@ int main(int argc, char const *argv[])
         printf("Oops, no devices!\n");
         return 1;
     }
+    /* Warning! This id is just for test! Remove it and put your value */
     const int id = 10494;
     int r = 0;
     LIBMTP_BeginEditObject(device, id);
