@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <libmtp.h>
+#include <inttypes.h>
 
 const char* const get_type(LIBMTP_filetype_t type)
 {
@@ -24,7 +25,7 @@ int main(void)
     LIBMTP_file_t *file = files, *tmp = NULL;
     while (file) {
         if (file->parent_id == 0)
-            printf("File %s. Type: %s. Size: %llu\n", file->filename, get_type(file->filetype), file->filesize);
+            printf("File %s. Type: %s. Size: %"PRIu64"\n", file->filename, get_type(file->filetype), file->filesize);
         tmp = file;
         file = file->next;
         LIBMTP_destroy_file_t(tmp);

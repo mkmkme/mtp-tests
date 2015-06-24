@@ -1,5 +1,6 @@
 #include <libmtp.h>
 #include <stdlib.h>
+#include <inttypes.h>
 
 const char* const get_type(LIBMTP_filetype_t type) {
     switch (type) {
@@ -128,9 +129,9 @@ int main(void)
         LIBMTP_file_t *file = ff, *tmp = NULL;
         while (file) {
             //if (file->parent_id == 0) {
-                printf("File %s, size=%llu, id=%lu, type=%s\n",
+                printf("File %s, size=%"PRIu64", id=%"PRIu32", type=%s\n",
                         file->filename, file->filesize, 
-                        (unsigned long)file->item_id,
+                        file->item_id,
                         get_type(file->filetype));
            //}
             tmp = file;
