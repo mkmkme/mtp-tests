@@ -4,7 +4,7 @@
 CC=gcc
 CFLAGS=-c -Werror=all
 LDFLAGS=-lmtp
-SOURCES=filelist.c rawdevs.c
+SOURCES=$(wildcard *.c)
 OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=$(SOURCES:.c=)
 
